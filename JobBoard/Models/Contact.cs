@@ -1,4 +1,4 @@
-namespace JobBoard.Model
+namespace JobBoard.Models
 {
   public class Contact
   {
@@ -6,11 +6,16 @@ namespace JobBoard.Model
     public string Email { get; set; }
     public string Phone { get; set; }
 
-    Contact(string name, string email, string phone)
+    public Contact(string name, string email, string phone)
     {
       Name = name;
       Email = email;
       Phone = phone;
+    }
+
+    public override string ToString()
+    {
+      return $"{Name} {Email} {Phone}";
     }
   }
 }

@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 
-namespace JobBoard.Model
+namespace JobBoard.Models
 {
   public class JobOpening
   {
     public string Title { get; }
     public string Description { get; }
     public Contact Contact { get; }
-    private List<JobOpening> _allOpenings = new List<JobOpening>() { };
+    private static List<JobOpening> _allOpenings = new List<JobOpening>() { };
 
     public JobOpening(string title, string description, Contact contact)
     {
@@ -17,12 +17,12 @@ namespace JobBoard.Model
       _allOpenings.Add(this);
     }
 
-    public List<JobOpening> GetAll()
+    public static List<JobOpening> GetAll()
     {
       return _allOpenings;
     }
 
-    public void ClearAll()
+    public static void ClearAll()
     {
       _allOpenings.Clear();
     }

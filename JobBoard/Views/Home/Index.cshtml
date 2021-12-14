@@ -1,0 +1,17 @@
+@using JobBoard.Models
+
+<h2>Job Openings</h2>
+
+@if (Model.Count == 0)
+{
+  <p>No jobs to display</p>
+}
+
+<ul>
+  @foreach (JobOpening Job in Model)
+  {
+    string job = $"{Job.Title} {Job.Description} {Job.Contact.Name} {Job.Contact.Email} {Job.Contact.Phone}";
+    <li>@job</li>
+  }
+
+  <a href="/new">Add a job.</a>
